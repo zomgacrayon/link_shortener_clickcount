@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Welcome to Cheryll's URL Shorterner!</h1>
+</div>
+
+<form action="/urls" method="post">
+    <b>URL:</b> <input type="text" name="url">
+    <input type="submit" value="Shorten me, baby!">
+</form><br>
+
+<center><table width= 70% border=2>
+  <tr>
+    <th>id</th>
+    <th>Shorten URL</th>
+    <th>Original URL</th>
+  </tr>
+  <% @urls.each do |url| %>
+    <tr>
+      <td> <%= url.id %></td>
+      <td><a href="http://localhost:9393/<%= url.shorten_url %>"><%= url.shorten_url %></a></td>
+      <td> <%= url.url %></td>
+    </tr>
+  <% end %>
+</table></center>
